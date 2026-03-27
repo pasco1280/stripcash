@@ -10,54 +10,54 @@
   ============================================================ -->
   <script>
     const CONFIG = {
-      produktName:     "Waschmittelstreifen",
-      tagline:         "Saubere Wäsche. Null Plastik. Für immer.",
-      subTagline:      "60 Waschgänge. So klein wie eine Kreditkarte. So wirksam wie flüssiges Waschmittel.",
-      preisNeu:        "19,90",
-      preisAlt:        "34,90",
-      rabattLabel:     "43% gespart",
-      kundenAnzahl:    "3.241",
-      bewertung:       "4,8",
-      bewertungCount:  "1.847",
-      lieferInfo:      "Kostenloser Versand ab 29 € · Lieferung in 2–4 Werktagen",
-      ctaText:         "Jetzt vorbestellen",
-      wartelisteText:  "Trag deine Email ein — wir benachrichtigen dich als Erstes wenn der Launch startet.",
-      garantie:        "30 Tage Geld-zurück-Garantie",
-      produktEmoji:    "🧺",
-      // Farben
+      produktName:     "Dr. Beckmann MAGIC LEAVES",
+      tagline:         "Waschen neu gedacht. Kein Kanister. Kein Kleckern. Blütenfrisch.",
+      subTagline:      "80 Waschgänge in einer handflächengroßen Box. Wirkt ab 20°C. Ohne Mikroplastik. Nr. 1 in Spezialwaschmittel.",
+      preisNeu:        "10,49",
+      preisAlt:        "12,49",
+      rabattLabel:     "Nr. 1 Bestseller",
+      kundenAnzahl:    "700+",
+      bewertung:       "4,7",
+      bewertungCount:  "4.843",
+      lieferInfo:      "GRATIS Prime-Lieferung · Retournierbar innerhalb 30 Tagen",
+      ctaText:         "Jetzt bei Amazon kaufen",
+      garantie:        "Amazon Käuferschutz · 30 Tage Rückgabe",
+      produktEmoji:    "🍃",
+      affiliateUrl:    "https://amzn.to/40Yw1oo",
+      // Farben — Dr. Beckmann Branding (Navy + Teal)
       farben: {
-        primary:    "#1B3D2F",
-        accent:     "#4E9E74",
-        gold:       "#B8974A",
-        bg:         "#F9F8F5",
-        bgAlt:      "#EDEFEA",
+        primary:    "#003087",
+        accent:     "#00A4AE",
+        gold:       "#00A4AE",
+        bg:         "#F4F8FB",
+        bgAlt:      "#E4EEF5",
         text:       "#111111",
         textSoft:   "#5A5A5A",
         white:      "#FFFFFF",
       },
       benefits: [
-        { icon: "🌿", title: "95% weniger Plastik",     text: "Kein Plastikkanister mehr. Nur ein winziges, biologisch abbaubares Päckchen." },
-        { icon: "💧", title: "Hochkonzentrierte Formel", text: "Ein Streifen = eine vollständige Waschladung. Nichts verschwendet." },
-        { icon: "✈️", title: "Reise-tauglich",           text: "Kleiner als deine Zahnbürste. Perfekt für unterwegs, Camping, Geschäftsreisen." },
-        { icon: "🧴", title: "Hautfreundlich",            text: "Dermatologisch getestet. Frei von Parabenen, Phosphaten & Chlorbleiche." },
-        { icon: "♻️", title: "OEKO-TEX® zertifiziert",   text: "Vegane Formel. Cruelty-free. Biologisch abbaubare Verpackung." },
-        { icon: "💰", title: "Bis zu 40% günstiger",      text: "Pro Waschgang deutlich günstiger als herkömmliche Marken-Waschmittel." },
+        { icon: "🍃", title: "Kein Mikroplastik",          text: "100% frei von Mikroplastik und Konservierungsstoffen. Gut für dich und die Umwelt." },
+        { icon: "💧", title: "100% wasserlöslich",          text: "Das Blatt löst sich vollständig auf — keine Rückstände in der Maschine oder auf der Wäsche." },
+        { icon: "✈️", title: "Ideal für Reisen",            text: "Handflächengroß, federleicht. Perfekt für Urlaub, Camping und unterwegs." },
+        { icon: "🌡️", title: "Wirkt ab 20°C",              text: "Volle Waschkraft bereits im Kaltwasserprogramm — spart Energie und schont Fasern." },
+        { icon: "🌱", title: "Vegan & klimaneutral",        text: "Frei von tierischen Inhaltsstoffen. Klimaneutral produziert. Recycelbare Verpackung." },
+        { icon: "📦", title: "80 Waschgänge · eine Box",   text: "Kein Schleppen, kein Lagern. Die ganze Box passt in ein Küchenschubfach." },
       ],
       schritte: [
-        { nr: "01", title: "Streifen nehmen",  text: "Einen Streifen aus der Box ziehen. Kein Abmessen, kein Kleckern." },
-        { nr: "02", title: "In die Trommel",   text: "Einfach in die Trommel legen, Wäsche drauf, starten." },
-        { nr: "03", title: "Strahlend sauber", text: "Perfekte Reinigung bei 30–60°C. Für Farb- und Weißwäsche." },
+        { nr: "01", title: "Ein Blatt nehmen",   text: "Direkt aus der Box — kein Abmessen, kein Kleckern, keine Sauerei." },
+        { nr: "02", title: "In die Trommel",     text: "Blatt zuerst in die leere Trommel legen, dann Wäsche dazu. Programm starten." },
+        { nr: "03", title: "Strahlend sauber",   text: "Wirkt ab 20°C. Löst sich vollständig auf. Kein Rückstand — nirgendwo." },
       ],
       testimonials: [
-        { name: "Sarah K., Hamburg",  sterne: 5, text: "Ich war skeptisch, aber die reinigen wirklich genauso gut wie mein altes Waschmittel. Und der Unterschied im Mülleimer ist enorm." },
-        { name: "Marcus T., München", sterne: 5, text: "Endlich mal eine Nachhaltigkeitslösung die nicht mehr kostet und genauso funktioniert. Kaufe nie wieder Kanister." },
-        { name: "Julia M., Berlin",   sterne: 5, text: "Hab sie meiner ganzen Familie empfohlen. Praktisch, umweltfreundlich, und der Duft ist wirklich angenehm." },
+        { name: "Sandra B., Deutschland",  sterne: 5, text: "Ich war erst skeptisch, ob so ein kleines Blatt wirklich ein ganzes Waschmittel ersetzen kann. Aber ich bin echt positiv überrascht. Kein Abmessen, kein Kleckern — und die Wäsche riecht wunderbar frisch." },
+        { name: "Mozartkugel, verifiziert", sterne: 5, text: "Zufällig entdeckt, getestet und für sehr gut befunden. Wäsche riecht super, wird sauber und die Blätter lösen sich in Windeseile auf. Großartiges Preis-Leistungs-Verhältnis." },
+        { name: "Dani, verifiziert",        sterne: 5, text: "Sehr gute Waschmittelblätter. Eine Bekannte lobte die Waschleistung — ich habe es getestet und sie hatte recht. So sauber wie immer, aber ohne Kanister und ohne Chaos." },
       ],
       faq: [
-        { frage: "Funktionieren sie bei 30°C genauso gut?",   antwort: "Ja. Die Formel ist speziell auf niedrige Temperaturen optimiert — für maximale Reinigung bei minimalem Energieverbrauch." },
-        { frage: "Wie lange reicht eine Box?",                 antwort: "Eine Box enthält 60 Streifen = 60 Waschgänge. Bei 5 Waschgängen pro Woche reicht das über 3 Monate." },
-        { frage: "Sind sie für Allergiker geeignet?",         antwort: "Ja. Dermatologisch getestet und für empfindliche Haut freigegeben. Duftstofffreie Variante erhältlich." },
-        { frage: "Was wenn ich nicht zufrieden bin?",         antwort: "30 Tage Geld-zurück-Garantie ohne Wenn und Aber. Einfach schreiben — wir erstatten sofort." },
+        { frage: "Funktioniert es wirklich bei 20°C?",         antwort: "Ja. Die Formel ist speziell auf niedrige Temperaturen ausgelegt — volle Waschkraft auch im Kaltwasserprogramm. Gut für Fasern und Stromrechnung." },
+        { frage: "Wie lange reicht eine Box?",                  antwort: "Eine Box enthält 80 Blätter = 80 Waschgänge. Bei 5 Waschgängen pro Woche hält das über 3 Monate." },
+        { frage: "Ist es für empfindliche Haut geeignet?",     antwort: "Die Sensitiv-Variante (Baumwollblüte) ist speziell für empfindliche Haut entwickelt. Frei von Konservierungsstoffen und Mikroplastik." },
+        { frage: "Kann man die Blätter teilen?",               antwort: "Ja — jedes Blatt hat eine Perforationslinie. Für kleine Waschladungen oder Handwäsche reicht ein halbes Blatt." },
       ],
       ga4Id:       "G-XXXXXXXXXX",
       metaPixelId: "XXXXXXXXXXXXXXXXX",
@@ -191,11 +191,12 @@
       content: ''; position: absolute; inset: 0;
       background: radial-gradient(circle at 28% 28%, rgba(255,255,255,0.55) 0%, transparent 58%);
     }
-    .product-visual-inner { text-align: center; z-index: 1; padding: 40px; }
-    .product-emoji { font-size: 6.5rem; display: block; margin-bottom: 18px; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.08)); }
+    .product-visual-inner { text-align: center; z-index: 1; padding: 24px; width: 100%; }
+    .product-img { width: 100%; max-width: 280px; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 12px 28px rgba(0,0,0,0.12)); }
     .product-label {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.05rem; color: var(--primary); font-weight: 600; letter-spacing: 0.06em;
+      margin-top: 12px;
     }
     .product-tag {
       position: absolute; top: 20px; right: 20px;
@@ -203,8 +204,6 @@
       padding: 8px 16px; font-size: 0.78rem; font-weight: 600;
       color: var(--primary); box-shadow: var(--shadow);
     }
-    .product-strips { display: flex; gap: 6px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
-    .strip { width: 52px; height: 13px; border-radius: 3px; background: linear-gradient(90deg, #9ECFB0, #C2E8D0); box-shadow: 0 2px 6px rgba(0,0,0,0.07); }
 
     .social-strip {
       display: flex; align-items: center; gap: 16px;
@@ -429,14 +428,11 @@
       </div>
       <div>
         <div class="product-visual">
-          <div class="product-tag">60 Streifen · 1 Box</div>
+          <div class="product-tag">80 Blätter · 1 Box</div>
           <div class="product-visual-inner">
-            <span class="product-emoji" id="hero-emoji">🧺</span>
-            <div class="product-label" id="product-label-visual">Waschmittelstreifen</div>
-            <div class="product-strips">
-              <div class="strip"></div><div class="strip"></div><div class="strip"></div>
-              <div class="strip"></div><div class="strip"></div><div class="strip"></div>
-              <div class="strip"></div><div class="strip"></div>
+            <div style="display:flex;gap:12px;align-items:center;justify-content:center;">
+              <img class="product-img" style="max-width:180px;" src="https://m.media-amazon.com/images/I/61ybg2EhJ3L._AC_UL320_.jpg" alt="Dr. Beckmann MAGIC LEAVES" />
+              <img class="product-img" style="max-width:120px;border-radius:12px;" src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/8e6a4ea1-8fae-45cc-ba93-155bd58546e5.__CR0,0,166,182_PT0_SX166_V1___.png" alt="Dr. Beckmann Anwendung" />
             </div>
           </div>
         </div>
@@ -460,7 +456,7 @@
   <div class="container trust-bar-inner">
     <div class="trust-item"><span class="val" id="trust-kunden">3.241</span><span class="lbl">Zufriedene Kunden</span></div>
     <div class="trust-item"><span class="val">95%</span><span class="lbl">Weniger Plastik</span></div>
-    <div class="trust-item"><span class="val">60</span><span class="lbl">Waschgänge pro Box</span></div>
+    <div class="trust-item"><span class="val">80</span><span class="lbl">Waschgänge pro Box</span></div>
     <div class="trust-item"><span class="val">4,8 ★</span><span class="lbl">Durchschnittsbewertung</span></div>
   </div>
 </div>
@@ -508,7 +504,7 @@
     </div>
     <div class="pricing-card fade-up">
       <h2 id="pricing-name">Waschmittelstreifen</h2>
-      <p style="margin:8px 0 0;font-size:0.88rem;">Starter-Box · 60 Waschgänge</p>
+      <p style="margin:8px 0 0;font-size:0.88rem;">80 Blätter · 80 Waschgänge</p>
       <div class="hero-price-block" style="justify-content:center;margin:24px 0 8px;">
         <span class="price-new" id="pricing-new">€19,90</span>
         <span class="price-old" id="pricing-old">€34,90</span>
@@ -596,9 +592,15 @@
   document.getElementById('modal-sub').textContent          = CONFIG.wartelisteText;
   document.getElementById('guarantee-text').innerHTML       = '🔒&nbsp; ' + CONFIG.garantie;
   document.getElementById('shipping-info').textContent      = CONFIG.lieferInfo;
+
+  // Alle Buttons auf Affiliate-Link umleiten
+  document.querySelectorAll('[onclick*="openModal"]').forEach(btn => {
+    btn.removeAttribute('onclick');
+    btn.addEventListener('click', () => window.open(CONFIG.affiliateUrl, '_blank'));
+  });
   document.getElementById('trust-kunden').textContent       = CONFIG.kundenAnzahl;
-  document.getElementById('product-label-visual').textContent = CONFIG.produktName;
-  document.getElementById('hero-emoji').textContent         = CONFIG.produktEmoji;
+  // product-label-visual removed (replaced by product image)
+  // hero-emoji removed (replaced by product image)
   document.getElementById('social-proof-text').textContent  = CONFIG.bewertung + ' · ' + CONFIG.bewertungCount + ' Bewertungen';
 
   // Steps
@@ -622,7 +624,7 @@
 
   // Pricing includes
   const pricingIncludes = document.getElementById('pricing-includes');
-  ['60 Waschmittelstreifen (60 Waschgänge)', 'Für Farb- und Weißwäsche geeignet', 'OEKO-TEX® zertifiziert · Vegane Formel', 'Biologisch abbaubare Verpackung', CONFIG.garantie].forEach(item => {
+  ['80 Waschmittel-Blätter (80 Waschgänge)', 'Für Farb- und Weißwäsche · ab 20°C', 'Vegan · kein Mikroplastik · klimaneutral', 'Recycelbare Verpackung', CONFIG.garantie].forEach(item => {
     pricingIncludes.innerHTML += `<li><span class="check">✓</span> ${item}</li>`;
   });
 
