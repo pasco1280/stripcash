@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Produkt — Trend Drop</title>
+
+  <!-- ============================================================
+       CONFIG — Hier alles anpassen pro Produkt (5 Minuten)
+  ============================================================ -->
+  <script>
+    const CONFIG = {
+      produktName:     "Waschmittelstreifen",
+      tagline:         "Saubere Wäsche. Null Plastik. Für immer.",
+      subTagline:      "60 Waschgänge. So klein wie eine Kreditkarte. So wirksam wie flüssiges Waschmittel.",
+      preisNeu:        "19,90",
+      preisAlt:        "34,90",
+      rabattLabel:     "43% gespart",
+      kundenAnzahl:    "3.241",
+      bewertung:       "4,8",
+      bewertungCount:  "1.847",
+      lieferInfo:      "Kostenloser Versand ab 29 € · Lieferung in 2–4 Werktagen",
+      ctaText:         "Jetzt vorbestellen",
+      wartelisteText:  "Trag deine Email ein — wir benachrichtigen dich als Erstes wenn der Launch startet.",
+      garantie:        "30 Tage Geld-zurück-Garantie",
+      produktEmoji:    "🧺",
+      // Farben
+      farben: {
+        primary:    "#1B3D2F",
+        accent:     "#4E9E74",
+        gold:       "#B8974A",
+        bg:         "#F9F8F5",
+        bgAlt:      "#EDEFEA",
+        text:       "#111111",
+        textSoft:   "#5A5A5A",
+        white:      "#FFFFFF",
+      },
+      benefits: [
+        { icon: "🌿", title: "95% weniger Plastik",     text: "Kein Plastikkanister mehr. Nur ein winziges, biologisch abbaubares Päckchen." },
+        { icon: "💧", title: "Hochkonzentrierte Formel", text: "Ein Streifen = eine vollständige Waschladung. Nichts verschwendet." },
+        { icon: "✈️", title: "Reise-tauglich",           text: "Kleiner als deine Zahnbürste. Perfekt für unterwegs, Camping, Geschäftsreisen." },
+        { icon: "🧴", title: "Hautfreundlich",            text: "Dermatologisch getestet. Frei von Parabenen, Phosphaten & Chlorbleiche." },
+        { icon: "♻️", title: "OEKO-TEX® zertifiziert",   text: "Vegane Formel. Cruelty-free. Biologisch abbaubare Verpackung." },
+        { icon: "💰", title: "Bis zu 40% günstiger",      text: "Pro Waschgang deutlich günstiger als herkömmliche Marken-Waschmittel." },
+      ],
+      schritte: [
+        { nr: "01", title: "Streifen nehmen",  text: "Einen Streifen aus der Box ziehen. Kein Abmessen, kein Kleckern." },
+        { nr: "02", title: "In die Trommel",   text: "Einfach in die Trommel legen, Wäsche drauf, starten." },
+        { nr: "03", title: "Strahlend sauber", text: "Perfekte Reinigung bei 30–60°C. Für Farb- und Weißwäsche." },
+      ],
+      testimonials: [
+        { name: "Sarah K., Hamburg",  sterne: 5, text: "Ich war skeptisch, aber die reinigen wirklich genauso gut wie mein altes Waschmittel. Und der Unterschied im Mülleimer ist enorm." },
+        { name: "Marcus T., München", sterne: 5, text: "Endlich mal eine Nachhaltigkeitslösung die nicht mehr kostet und genauso funktioniert. Kaufe nie wieder Kanister." },
+        { name: "Julia M., Berlin",   sterne: 5, text: "Hab sie meiner ganzen Familie empfohlen. Praktisch, umweltfreundlich, und der Duft ist wirklich angenehm." },
+      ],
+      faq: [
+        { frage: "Funktionieren sie bei 30°C genauso gut?",   antwort: "Ja. Die Formel ist speziell auf niedrige Temperaturen optimiert — für maximale Reinigung bei minimalem Energieverbrauch." },
+        { frage: "Wie lange reicht eine Box?",                 antwort: "Eine Box enthält 60 Streifen = 60 Waschgänge. Bei 5 Waschgängen pro Woche reicht das über 3 Monate." },
+        { frage: "Sind sie für Allergiker geeignet?",         antwort: "Ja. Dermatologisch getestet und für empfindliche Haut freigegeben. Duftstofffreie Variante erhältlich." },
+        { frage: "Was wenn ich nicht zufrieden bin?",         antwort: "30 Tage Geld-zurück-Garantie ohne Wenn und Aber. Einfach schreiben — wir erstatten sofort." },
+      ],
+      ga4Id:       "G-XXXXXXXXXX",
+      metaPixelId: "XXXXXXXXXXXXXXXXX",
+      webhookUrl:  "",
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    :root {
+      --primary:   #1B3D2F;
+      --accent:    #4E9E74;
+      --gold:      #B8974A;
+      --bg:        #F9F8F5;
+      --bg-alt:    #EDEFEA;
+      --text:      #111111;
+      --text-soft: #5A5A5A;
+      --white:     #FFFFFF;
+      --radius:    14px;
+      --shadow:    0 4px 24px rgba(0,0,0,0.07);
+      --shadow-lg: 0 16px 56px rgba(0,0,0,0.10);
+    }
+
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.12; }
+    h1 { font-size: clamp(2.6rem, 5.5vw, 4.2rem); letter-spacing: -0.02em; }
+    h2 { font-size: clamp(1.9rem, 3.5vw, 3rem); letter-spacing: -0.01em; }
+    p  { color: var(--text-soft); font-size: 1rem; line-height: 1.7; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    section { padding: 100px 0; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(249,248,245,0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 18px 0;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 600; color: var(--primary);
+      text-decoration: none; letter-spacing: 0.03em;
+    }
+    .nav-cta {
+      background: var(--primary); color: var(--white);
+      padding: 11px 26px; border-radius: 50px;
+      text-decoration: none; font-size: 0.88rem; font-weight: 500;
+      border: none; cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(27,61,47,0.28); }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 88px 0 104px;
+      background: linear-gradient(155deg, var(--white) 0%, var(--bg-alt) 100%);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(78,158,116,0.09); color: var(--accent);
+      border: 1px solid rgba(78,158,116,0.22);
+      padding: 7px 16px; border-radius: 50px;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 28px;
+    }
+    .hero h1 { color: var(--primary); margin-bottom: 22px; }
+    .hero-sub {
+      font-size: 1.08rem; color: var(--text-soft);
+      margin-bottom: 40px; max-width: 450px; line-height: 1.75;
+    }
+    .hero-price-block {
+      display: flex; align-items: baseline; gap: 12px; margin-bottom: 32px;
+    }
+    .price-new {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem; font-weight: 600; color: var(--primary);
+    }
+    .price-old {
+      font-size: 1.1rem; color: var(--text-soft); text-decoration: line-through;
+    }
+    .price-badge {
+      background: var(--gold); color: var(--white);
+      padding: 4px 11px; border-radius: 6px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--primary); color: var(--white);
+      padding: 18px 42px; border-radius: 50px;
+      font-size: 1rem; font-weight: 500; text-decoration: none;
+      border: none; cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.03em;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(27,61,47,0.28); }
+    .hero-meta {
+      display: flex; align-items: center; gap: 18px;
+      margin-top: 22px; flex-wrap: wrap;
+    }
+    .hero-meta span { font-size: 0.84rem; color: var(--text-soft); display: flex; align-items: center; gap: 6px; }
+    .hero-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-soft); opacity: 0.35; }
+
+    /* ── Product Visual ── */
+    .product-visual {
+      position: relative; aspect-ratio: 1;
+      background: linear-gradient(145deg, #D0E8DA 0%, #E6F5EC 55%, #F2FAF5 100%);
+      border-radius: 28px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; box-shadow: var(--shadow-lg);
+    }
+    .product-visual::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 28% 28%, rgba(255,255,255,0.55) 0%, transparent 58%);
+    }
+    .product-visual-inner { text-align: center; z-index: 1; padding: 40px; }
+    .product-emoji { font-size: 6.5rem; display: block; margin-bottom: 18px; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.08)); }
+    .product-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; color: var(--primary); font-weight: 600; letter-spacing: 0.06em;
+    }
+    .product-tag {
+      position: absolute; top: 20px; right: 20px;
+      background: var(--white); border-radius: 50px;
+      padding: 8px 16px; font-size: 0.78rem; font-weight: 600;
+      color: var(--primary); box-shadow: var(--shadow);
+    }
+    .product-strips { display: flex; gap: 6px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+    .strip { width: 52px; height: 13px; border-radius: 3px; background: linear-gradient(90deg, #9ECFB0, #C2E8D0); box-shadow: 0 2px 6px rgba(0,0,0,0.07); }
+
+    .social-strip {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--white); border-radius: var(--radius);
+      padding: 16px 24px; box-shadow: var(--shadow);
+      margin-top: 20px; width: fit-content;
+    }
+    .avatar-stack { display: flex; }
+    .avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 2px solid var(--white); margin-left: -8px;
+      font-size: 1.15rem; display: flex; align-items: center; justify-content: center;
+      background: var(--bg-alt);
+    }
+    .avatar:first-child { margin-left: 0; }
+    .stars { color: #F4C033; font-size: 0.95rem; letter-spacing: 1px; }
+
+    /* ── Scarcity ── */
+    .scarcity-bar {
+      background: rgba(184,151,74,0.07); border: 1px solid rgba(184,151,74,0.18);
+      border-radius: 10px; padding: 14px 20px; margin-top: 26px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .scarcity-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.35;} }
+    .scarcity-bar span { font-size: 0.86rem; color: var(--gold); font-weight: 500; }
+
+    /* ── Trust Bar ── */
+    .trust-bar { background: var(--primary); padding: 32px 0; }
+    .trust-bar-inner {
+      display: flex; justify-content: space-around; align-items: center;
+      flex-wrap: wrap; gap: 28px;
+    }
+    .trust-item { text-align: center; }
+    .trust-item .val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 600; display: block; color: var(--white);
+    }
+    .trust-item .lbl { font-size: 0.8rem; opacity: 0.65; color: var(--white); }
+
+    /* ── Section header ── */
+    .section-header { text-align: center; margin-bottom: 68px; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.76rem; font-weight: 500; letter-spacing: 0.13em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+    }
+    .section-header h2 { color: var(--primary); margin-bottom: 16px; }
+    .section-header p { max-width: 500px; margin: 0 auto; font-size: 1.04rem; }
+
+    /* ── Steps ── */
+    .steps-section { background: var(--white); }
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+    .step-card {
+      text-align: center; padding: 44px 28px;
+      border-radius: 22px; background: var(--bg);
+    }
+    .step-nr {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem; font-weight: 600;
+      color: rgba(27,61,47,0.07); line-height: 1;
+      margin-bottom: 16px; display: block;
+    }
+    .step-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.15rem; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+    .step-card p { font-size: 0.94rem; }
+
+    /* ── Benefits ── */
+    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .benefit-card {
+      background: var(--white); border-radius: 20px; padding: 32px 26px;
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+    .benefit-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .benefit-icon { font-size: 1.75rem; margin-bottom: 16px; display: block; }
+    .benefit-card h3 { color: var(--primary); margin-bottom: 8px; font-size: 1.05rem; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+    .benefit-card p { font-size: 0.9rem; }
+
+    /* ── Testimonials ── */
+    .testimonials-section { background: var(--white); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testimonial-card { background: var(--bg); border-radius: 20px; padding: 32px 28px; }
+    .testimonial-card .stars { margin-bottom: 16px; display: block; }
+    .testimonial-text { font-size: 0.97rem; color: var(--text); line-height: 1.72; margin-bottom: 22px; font-style: italic; }
+    .testimonial-name { font-size: 0.83rem; font-weight: 600; color: var(--primary); }
+
+    /* ── Pricing ── */
+    .pricing-section { background: var(--bg-alt); }
+    .pricing-card {
+      max-width: 480px; margin: 0 auto;
+      background: var(--white); border-radius: 26px;
+      padding: 52px 44px; text-align: center;
+      box-shadow: var(--shadow-lg);
+      border: 1.5px solid rgba(27,61,47,0.07);
+    }
+    .pricing-card h2 { color: var(--primary); margin-bottom: 6px; }
+    .pricing-includes { list-style: none; margin: 28px 0 36px; text-align: left; }
+    .pricing-includes li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 11px 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+      font-size: 0.94rem; color: var(--text);
+    }
+    .pricing-includes li:last-child { border-bottom: none; }
+    .check { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    .guarantee { margin-top: 20px; font-size: 0.84rem; color: var(--text-soft); display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .shipping-info { font-size: 0.84rem; color: var(--text-soft); margin-top: 12px; }
+
+    /* ── FAQ ── */
+    .faq-list { max-width: 680px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); padding: 24px 0; }
+    .faq-q {
+      font-size: 1rem; font-weight: 600; color: var(--primary);
+      cursor: pointer; display: flex; justify-content: space-between;
+      align-items: center; gap: 16px;
+      background: none; border: none; width: 100%; text-align: left;
+    }
+    .faq-q .arrow { font-size: 1.1rem; transition: transform 0.3s; flex-shrink: 0; color: var(--accent); }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a { font-size: 0.94rem; color: var(--text-soft); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s; }
+    .faq-a.open { max-height: 200px; padding-top: 14px; }
+
+    /* ── Final CTA ── */
+    .final-cta { background: var(--primary); text-align: center; padding: 100px 0; }
+    .final-cta h2 { color: var(--white); margin-bottom: 16px; }
+    .final-cta p { color: rgba(255,255,255,0.6); margin-bottom: 44px; font-size: 1.04rem; }
+    .btn-white {
+      background: var(--white); color: var(--primary);
+      padding: 18px 52px; border-radius: 50px;
+      font-size: 1rem; font-weight: 600; text-decoration: none;
+      border: none; cursor: pointer; display: inline-block;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,0,0,0.2); }
+
+    /* ── Footer ── */
+    footer { background: #0C1E14; color: rgba(255,255,255,0.35); padding: 32px 0; text-align: center; font-size: 0.8rem; }
+    footer a { color: inherit; }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.48); backdrop-filter: blur(5px);
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--white); border-radius: 26px;
+      padding: 52px 44px; max-width: 460px; width: 100%;
+      text-align: center; position: relative; box-shadow: var(--shadow-lg);
+      animation: modalIn 0.38s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes modalIn { from { opacity:0; transform:scale(0.88) translateY(24px); } to { opacity:1; transform:scale(1) translateY(0); } }
+    .modal-close { position: absolute; top: 18px; right: 22px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-soft); line-height: 1; }
+    .modal-emoji { font-size: 2.6rem; margin-bottom: 14px; display: block; }
+    .modal h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: var(--primary); margin-bottom: 10px; }
+    .modal p { margin-bottom: 28px; font-size: 0.94rem; }
+    .modal input[type="email"] {
+      width: 100%; padding: 15px 20px; border-radius: 12px;
+      border: 1.5px solid rgba(0,0,0,0.11); font-size: 1rem;
+      margin-bottom: 12px; outline: none; font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.2s; background: var(--bg);
+    }
+    .modal input:focus { border-color: var(--accent); background: var(--white); }
+    .modal .btn-primary { width: 100%; font-size: 1rem; padding: 16px; border-radius: 12px; }
+    .modal-privacy { font-size: 0.76rem; color: var(--text-soft); margin-top: 12px; }
+    .success-state { display: none; }
+    .success-state .checkmark { font-size: 3rem; margin-bottom: 16px; display: block; }
+
+    /* ── Animations ── */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-delay { transition-delay: 0.12s; }
+    .fade-up-delay-2 { transition-delay: 0.24s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .hero-grid, .steps-grid, .benefits-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .hero { padding: 52px 0 68px; }
+      .product-visual { max-width: 300px; margin: 0 auto; }
+      section { padding: 68px 0; }
+      .trust-bar-inner { gap: 36px; }
+      .pricing-card { padding: 36px 28px; }
+      .modal { padding: 40px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo" id="nav-brand">✦&nbsp;&nbsp;StripWash</a>
+    <button class="nav-cta" onclick="openModal(event)" id="nav-cta-text">Jetzt vorbestellen</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">✦ &nbsp;Trending Produkt 2026</div>
+        <h1 id="hero-h1">Saubere Wäsche.<br>Null Plastik.<br>Für immer.</h1>
+        <p class="hero-sub" id="hero-sub">60 Waschgänge. So klein wie eine Kreditkarte. So wirksam wie flüssiges Waschmittel.</p>
+        <div class="hero-price-block">
+          <span class="price-new" id="price-new">€19,90</span>
+          <span class="price-old" id="price-old">€34,90</span>
+          <span class="price-badge" id="price-badge">43% gespart</span>
+        </div>
+        <button class="btn-primary" onclick="openModal(event)" id="hero-cta">Jetzt vorbestellen</button>
+        <div class="scarcity-bar">
+          <div class="scarcity-dot"></div>
+          <span>Nur noch 47 Einheiten verfügbar — Vorbestellungen werden priorisiert</span>
+        </div>
+        <div class="hero-meta">
+          <span>✓ Kostenloser Versand</span>
+          <span class="dot"></span>
+          <span>✓ 30 Tage Garantie</span>
+          <span class="dot"></span>
+          <span>✓ Sofort lieferbar</span>
+        </div>
+      </div>
+      <div>
+        <div class="product-visual">
+          <div class="product-tag">60 Streifen · 1 Box</div>
+          <div class="product-visual-inner">
+            <span class="product-emoji" id="hero-emoji">🧺</span>
+            <div class="product-label" id="product-label-visual">Waschmittelstreifen</div>
+            <div class="product-strips">
+              <div class="strip"></div><div class="strip"></div><div class="strip"></div>
+              <div class="strip"></div><div class="strip"></div><div class="strip"></div>
+              <div class="strip"></div><div class="strip"></div>
+            </div>
+          </div>
+        </div>
+        <div class="social-strip">
+          <div class="avatar-stack">
+            <div class="avatar">👩</div><div class="avatar">👨</div>
+            <div class="avatar">👩</div><div class="avatar">👴</div>
+          </div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div style="font-size:0.8rem;color:var(--text-soft);" id="social-proof-text">4,8 · 1.847 Bewertungen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="container trust-bar-inner">
+    <div class="trust-item"><span class="val" id="trust-kunden">3.241</span><span class="lbl">Zufriedene Kunden</span></div>
+    <div class="trust-item"><span class="val">95%</span><span class="lbl">Weniger Plastik</span></div>
+    <div class="trust-item"><span class="val">60</span><span class="lbl">Waschgänge pro Box</span></div>
+    <div class="trust-item"><span class="val">4,8 ★</span><span class="lbl">Durchschnittsbewertung</span></div>
+  </div>
+</div>
+
+<!-- Steps -->
+<section class="steps-section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">So einfach geht's</span>
+      <h2>In 3 Sekunden erklärt</h2>
+      <p>Kein Abmessen. Kein Kleckern. Kein schlechtes Gewissen.</p>
+    </div>
+    <div class="steps-grid" id="steps-grid"></div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section style="background:var(--bg);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Warum wechseln</span>
+      <h2>Alles was du brauchst.<br>Nichts was du nicht brauchst.</h2>
+    </div>
+    <div class="benefits-grid" id="benefits-grid"></div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Was Kunden sagen</span>
+      <h2>Überzeugt auf den ersten Streifen</h2>
+    </div>
+    <div class="testimonials-grid" id="testimonials-grid"></div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing-section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Angebot</span>
+      <h2>Einmal testen.<br>Nie mehr zurück.</h2>
+    </div>
+    <div class="pricing-card fade-up">
+      <h2 id="pricing-name">Waschmittelstreifen</h2>
+      <p style="margin:8px 0 0;font-size:0.88rem;">Starter-Box · 60 Waschgänge</p>
+      <div class="hero-price-block" style="justify-content:center;margin:24px 0 8px;">
+        <span class="price-new" id="pricing-new">€19,90</span>
+        <span class="price-old" id="pricing-old">€34,90</span>
+        <span class="price-badge" id="pricing-badge">43% gespart</span>
+      </div>
+      <ul class="pricing-includes" id="pricing-includes"></ul>
+      <button class="btn-primary" onclick="openModal(event)" style="width:100%;font-size:1rem;padding:18px;">Jetzt vorbestellen</button>
+      <p class="shipping-info" id="shipping-info">Kostenloser Versand ab 29 € · Lieferung in 2–4 Werktagen</p>
+      <p class="guarantee" id="guarantee-text">🔒&nbsp; 30 Tage Geld-zurück-Garantie</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--white);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">FAQ</span>
+      <h2>Häufige Fragen</h2>
+    </div>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Bereit für den Wechsel?</h2>
+    <p>Tausende haben bereits umgestellt. Jetzt bist du dran.</p>
+    <button class="btn-white" onclick="openModal(event)" id="final-cta-btn">Jetzt vorbestellen</button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>© 2026 &nbsp;·&nbsp; Alle Preise inkl. MwSt. &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></p>
+  </div>
+</footer>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="form-state">
+      <span class="modal-emoji">🎉</span>
+      <h3>Fast geschafft!</h3>
+      <p id="modal-sub">Trag deine Email ein — wir benachrichtigen dich als Erstes wenn der Launch startet.</p>
+      <input type="email" id="email-input" placeholder="deine@email.de" />
+      <button class="btn-primary" onclick="submitWarteliste()">Platz sichern</button>
+      <p class="modal-privacy">🔒 Kein Spam. Nur deine Launch-Benachrichtigung. Abmeldung jederzeit.</p>
+    </div>
+    <div class="success-state" id="success-state">
+      <span class="checkmark">✅</span>
+      <h3 style="color:var(--accent);">Du bist dabei!</h3>
+      <p style="margin-top:10px;">Wir schreiben dir sobald es losgeht. Danke für dein Vertrauen!</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Apply config
+  document.documentElement.style.setProperty('--primary',   CONFIG.farben.primary);
+  document.documentElement.style.setProperty('--accent',    CONFIG.farben.accent);
+  document.documentElement.style.setProperty('--gold',      CONFIG.farben.gold);
+  document.documentElement.style.setProperty('--bg',        CONFIG.farben.bg);
+  document.documentElement.style.setProperty('--bg-alt',    CONFIG.farben.bgAlt);
+  document.documentElement.style.setProperty('--text',      CONFIG.farben.text);
+  document.documentElement.style.setProperty('--text-soft', CONFIG.farben.textSoft);
+  document.documentElement.style.setProperty('--white',     CONFIG.farben.white);
+
+  document.getElementById('page-title').textContent         = CONFIG.produktName + ' — Trend Drop';
+  document.getElementById('hero-h1').innerHTML              = CONFIG.tagline.replace(/\. /g, '.<br>');
+  document.getElementById('hero-sub').textContent           = CONFIG.subTagline;
+  document.getElementById('price-new').textContent          = '€' + CONFIG.preisNeu;
+  document.getElementById('price-old').textContent          = '€' + CONFIG.preisAlt;
+  document.getElementById('price-badge').textContent        = CONFIG.rabattLabel;
+  document.getElementById('pricing-new').textContent        = '€' + CONFIG.preisNeu;
+  document.getElementById('pricing-old').textContent        = '€' + CONFIG.preisAlt;
+  document.getElementById('pricing-badge').textContent      = CONFIG.rabattLabel;
+  document.getElementById('pricing-name').textContent       = CONFIG.produktName;
+  document.getElementById('hero-cta').textContent           = CONFIG.ctaText;
+  document.getElementById('nav-cta-text').textContent       = CONFIG.ctaText;
+  document.getElementById('final-cta-btn').textContent      = CONFIG.ctaText;
+  document.getElementById('modal-sub').textContent          = CONFIG.wartelisteText;
+  document.getElementById('guarantee-text').innerHTML       = '🔒&nbsp; ' + CONFIG.garantie;
+  document.getElementById('shipping-info').textContent      = CONFIG.lieferInfo;
+  document.getElementById('trust-kunden').textContent       = CONFIG.kundenAnzahl;
+  document.getElementById('product-label-visual').textContent = CONFIG.produktName;
+  document.getElementById('hero-emoji').textContent         = CONFIG.produktEmoji;
+  document.getElementById('social-proof-text').textContent  = CONFIG.bewertung + ' · ' + CONFIG.bewertungCount + ' Bewertungen';
+
+  // Steps
+  const stepsGrid = document.getElementById('steps-grid');
+  CONFIG.schritte.forEach(s => {
+    stepsGrid.innerHTML += `<div class="step-card fade-up"><span class="step-nr">${s.nr}</span><h3>${s.title}</h3><p>${s.text}</p></div>`;
+  });
+
+  // Benefits
+  const benefitsGrid = document.getElementById('benefits-grid');
+  CONFIG.benefits.forEach(b => {
+    benefitsGrid.innerHTML += `<div class="benefit-card fade-up"><span class="benefit-icon">${b.icon}</span><h3>${b.title}</h3><p>${b.text}</p></div>`;
+  });
+
+  // Testimonials
+  const testimonialsGrid = document.getElementById('testimonials-grid');
+  CONFIG.testimonials.forEach(t => {
+    const s = '★'.repeat(t.sterne) + '☆'.repeat(5-t.sterne);
+    testimonialsGrid.innerHTML += `<div class="testimonial-card fade-up"><span class="stars">${s}</span><p class="testimonial-text">"${t.text}"</p><span class="testimonial-name">— ${t.name}</span></div>`;
+  });
+
+  // Pricing includes
+  const pricingIncludes = document.getElementById('pricing-includes');
+  ['60 Waschmittelstreifen (60 Waschgänge)', 'Für Farb- und Weißwäsche geeignet', 'OEKO-TEX® zertifiziert · Vegane Formel', 'Biologisch abbaubare Verpackung', CONFIG.garantie].forEach(item => {
+    pricingIncludes.innerHTML += `<li><span class="check">✓</span> ${item}</li>`;
+  });
+
+  // FAQ
+  const faqList = document.getElementById('faq-list');
+  CONFIG.faq.forEach(f => {
+    faqList.innerHTML += `<div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">${f.frage}<span class="arrow">▾</span></button><div class="faq-a">${f.antwort}</div></div>`;
+  });
+
+  function toggleFaq(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+
+  function openModal(e) { e && e.preventDefault(); document.getElementById('modal-overlay').classList.add('open'); }
+  function closeModal() { document.getElementById('modal-overlay').classList.remove('open'); }
+  function closeModalOnBg(e) { if (e.target === document.getElementById('modal-overlay')) closeModal(); }
+
+  async function submitWarteliste() {
+    const email = document.getElementById('email-input').value.trim();
+    if (!email || !email.includes('@')) { document.getElementById('email-input').style.borderColor='#e55'; return; }
+    if (window.gtag) gtag('event', 'generate_lead', { email });
+    if (window.fbq) fbq('track', 'Lead', { email });
+    if (CONFIG.webhookUrl) {
+      fetch(CONFIG.webhookUrl, { method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ email, produkt: CONFIG.produktName, ts: new Date().toISOString() })
+      }).catch(()=>{});
+    }
+    document.getElementById('form-state').style.display   = 'none';
+    document.getElementById('success-state').style.display = 'block';
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // GA4
+  if (CONFIG.ga4Id && CONFIG.ga4Id !== 'G-XXXXXXXXXX') {
+    const s = document.createElement('script'); s.src = 'https://www.googletagmanager.com/gtag/js?id=' + CONFIG.ga4Id; s.async = true; document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date()); gtag('config', CONFIG.ga4Id);
+  }
+  // Meta Pixel
+  if (CONFIG.metaPixelId && CONFIG.metaPixelId !== 'XXXXXXXXXXXXXXXXX') {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', CONFIG.metaPixelId); fbq('track', 'PageView');
+  }
+</script>
+</body>
+</html>
